@@ -1,0 +1,11 @@
+<h3> Register</h3>
+
+<form method="POST" action="createData/">
+    {% csrf_token%}
+    Name: <input name = "name">
+    Email:<input name = "email">
+    Password:<input name = "password">
+    <input type="submit" name="Create User" >
+</form>
+already have an account? <a href="{% url 'login' %}" class="ml-2">Login</a>
+   {{form.errors}}
