@@ -46,7 +46,6 @@ def loginPage(request):
         user = authenticate(request,name=name,password=password)
         print(name,password)
         if Users is not None:
-            print("dasdasdasdasdasdasd")
             login(request,user)
             return redirect('jadenSite/')
 
