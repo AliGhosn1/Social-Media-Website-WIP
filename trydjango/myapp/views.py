@@ -2,12 +2,25 @@ from django.shortcuts import render ,redirect
 from django.http import HttpResponse , HttpResponseRedirect
 from django.urls import reverse
 from django.template import loader
-from .models import jadenSite , SiteUsers
+from .models import jadenSite, SiteUsers
 from django.contrib.auth import authenticate, login
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm;
 from .forms import UserCreation
+from django.contrib.auth.hashers import check_password
 
 # Create your views here.
+def authenticateUser(request):
+    name = request.POST.get('name')
+    password = request.POST.get('password')
+    print(name, password)
+    try:
+        user = SiteUsers.objects.get(name=name)
+    except SiteUsers.DoesNotExist:
+        return None
+    if user is not None and user.password == password:
+        return user
+    else:
+        return None
 
 def jadenWebsite(request):
     men = jadenSite.objects.all().values()
@@ -38,16 +51,11 @@ def createData(request):
 
 
 def loginPage(request):
-    Users = SiteUsers.objects.all().values()
     if request.method == 'POST':
-        name = request.POST.get('name')
-        password = request.POST.get('password')
         #change authenticate method it is using the default admin and not the SiteUser lol
-        user = authenticate(request,username=name, password=password)
-        print(name,password)
+        user = authenticateUser(request)
         if user is not None:
-            #ssaas
-            login(request,user)
+            #login(request, user)
             return redirect('jadenSite/')
 
     context = {}
