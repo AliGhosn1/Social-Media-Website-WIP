@@ -4,7 +4,7 @@ from django.urls import reverse
 from django.template import loader
 from .models import jadenSite , SiteUsers
 from django.contrib.auth import authenticate, login
-from django.contrib.auth.forms import UserCreationForm;
+from django.contrib.auth.forms import UserCreationForm
 from .forms import UserCreation
 
 # Create your views here.
@@ -40,12 +40,12 @@ def createData(request):
 def loginPage(request):
     Users = SiteUsers.objects.all().values()
     if request.method == 'POST':
-        name=request.POST.get('name')
-        password=request.POST.get('password')
+        name = request.POST.get('name')
+        password = request.POST.get('password')
         #change authenticate method it is using the default admin and not the SiteUser lol
-        user = authenticate(request,name=name,password=password)
+        user = authenticate(request,username=name, password=password)
         print(name,password)
-        if Users is not None:
+        if user is not None:
             login(request,user)
             return redirect('jadenSite/')
 
