@@ -46,6 +46,7 @@ def loginPage(request):
         user = authenticate(request,username=name, password=password)
         print(name,password)
         if user is not None:
+            #ssaas
             login(request,user)
             return redirect('jadenSite/')
 
