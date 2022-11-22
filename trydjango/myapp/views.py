@@ -7,6 +7,7 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import UserCreationForm;
 from .forms import UserCreation
 from django.contrib.auth.hashers import check_password
+from django.contrib import messages
 
 # Create your views here.
 def authenticateUser(request):
@@ -59,7 +60,9 @@ def loginPage(request):
         print(user)
         if user is not None:
             login(request, user)
-            return redirect('jadenSite/')
+            return redirect('alisite/')
+        else:
+            messages.success(request, 'incorrect username or password')
     context = {}
     return render(request ,'login.html',context)
 #sdasdasdasd
@@ -71,8 +74,10 @@ def register(request):
         form = UserCreation(request.POST)
         if form.is_valid():
             form.save()
+            username = form.cleaned_data.get('username')
+            messages.success(request,'account was succesfully made for '+ username)
             return redirect('login')
     context = {'form': form}
-    return render(request,'register1.html',context)#render must take a dict so put form in dictionary
+    return render(request,'register3.html',context)#render must take a dict so put form in dictionary
 
 

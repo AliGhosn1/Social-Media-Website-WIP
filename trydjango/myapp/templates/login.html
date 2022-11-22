@@ -93,6 +93,9 @@ div.signin form{
             <input type="text" id = "password" name="password"><br><br>
             <input id = "signin" type="submit" value="SIGN IN" onclick = "window.location.href='login'">
         </form>
+        {% for message in messages %}
+        <p id="messages">{{message}}</p>
+        {%endfor%}
 
         <hr id = "signup">
         <h2> SIGN UP </h2>

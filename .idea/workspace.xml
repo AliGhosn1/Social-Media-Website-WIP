@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2502dfde-cb46-4339-806f-bb3ef9aabb48" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/trydjango.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/trydjango.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trydjango/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/trydjango/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trydjango/myapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/trydjango/myapp/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trydjango/myapp/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/trydjango/myapp/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trydjango/myapp/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/trydjango/myapp/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trydjango/myapp/templates/tester.html" beforeDir="false" afterPath="$PROJECT_DIR$/trydjango/myapp/templates/tester.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trydjango/myapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/trydjango/myapp/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -108,7 +106,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668979454930</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="changed the database to User model">
+      <created>1669075355005</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1669075355005</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -125,6 +130,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit one" />
     <MESSAGE value="Changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes" />
+    <MESSAGE value="changed the database to User model" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed the database to User model" />
   </component>
 </project>
