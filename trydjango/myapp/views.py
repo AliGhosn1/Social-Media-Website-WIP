@@ -60,7 +60,7 @@ def loginPage(request):
         print(user)
         if user is not None:
             login(request, user)
-            return redirect('alisite/')
+            return redirect('userSite/')
         else:
             messages.success(request, 'incorrect username or password')
     context = {}
@@ -76,8 +76,18 @@ def register(request):
             form.save()
             username = form.cleaned_data.get('username')
             messages.success(request,'account was succesfully made for '+ username)
+            newUser = SiteUsers.objects.create(name=username, picture="https://i.pinimg.com/736x/dd/f0/11/ddf0110aa19f445687b737679eec9cb2.jpg")
+            newUser.save()
             return redirect('login')
     context = {'form': form}
     return render(request,'register3.html',context)#render must take a dict so put form in dictionary
 
-
+def userSite(request):
+    if request.user.username == "":
+        return redirect('login')
+    else:
+        context = {
+            'NAME':request.user.username,
+            'PFP':SiteUsers.objects.get(name=request.user.username).picture
+        }
+        return render(request,'userPage.html', context)
