@@ -52,12 +52,14 @@ def createData(request):
 
 def loginPage(request):
     if request.method == 'POST':
-        #change authenticate method it is using the default admin and not the SiteUser lol
-        user = authenticateUser(request)
+        name = request.POST.get('name')
+        password = request.POST.get('password')
+        #user = authenticateUser(request)
+        user = authenticate(request,username=name,password=password)
+        print(user)
         if user is not None:
-            #login(request, user)
+            login(request, user)
             return redirect('jadenSite/')
-
     context = {}
     return render(request ,'login.html',context)
 #sdasdasdasd
@@ -71,6 +73,6 @@ def register(request):
             form.save()
             return redirect('login')
     context = {'form': form}
-    return render(request,'register.html',context)#render must take a dict so put form in dictionary
+    return render(request,'register1.html',context)#render must take a dict so put form in dictionary
 
 
