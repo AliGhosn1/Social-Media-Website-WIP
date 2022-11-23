@@ -7,7 +7,13 @@
     <list default="true" id="2502dfde-cb46-4339-806f-bb3ef9aabb48" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trydjango/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/trydjango/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trydjango/myapp/templates/tester.html" beforeDir="false" afterPath="$PROJECT_DIR$/trydjango/myapp/templates/tester.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trydjango/myapp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/trydjango/myapp/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trydjango/myapp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/trydjango/myapp/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trydjango/myapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/trydjango/myapp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trydjango/myapp/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/trydjango/myapp/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trydjango/myapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/trydjango/myapp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trydjango/myapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/trydjango/myapp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trydjango/trydjango/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/trydjango/trydjango/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669096817011</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="some html/styling">
+      <created>1669105028441</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1669105028441</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
