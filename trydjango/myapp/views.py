@@ -69,7 +69,7 @@ def loginPage(request):
         print(user)
         if user is not None:
             login(request, user)
-            return redirect('alisite/')
+            return redirect('userSite/')
         else:
             messages.success(request, 'incorrect username or password')
     context = {}
@@ -87,6 +87,8 @@ def register(request):
             form.save()
             username = form.cleaned_data.get('username')
             messages.success(request, 'account was succesfully made for ' + username)
+            newUser = SiteUsers.objects.create(name=username)
+            newUser.save()
             return redirect('login')
     context = {'form': form}
     print("dsadasdasd")
@@ -125,3 +127,13 @@ def image_upload_view(request):
     else:
         form = ImageForm()
     return render(request, 'post1.html', {'form': form})
+
+def userSite(request):
+    if request.user.username == "":
+        return redirect('login')
+    else:
+        context = {
+            'NAME':request.user.username,
+            'PFP':SiteUsers.objects.get(name=request.user.username).picture
+        }
+        return render(request,'userPage.html', context)

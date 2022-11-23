@@ -12,8 +12,7 @@ class jadenSite(models.Model):
 
 class SiteUsers(models.Model):
     name = models.CharField(max_length=255)
-    email = models.CharField(max_length=255)
-    password = models.CharField(max_length=255)
+    picture = models.URLField(max_length=255, default="https://i.pinimg.com/736x/dd/f0/11/ddf0110aa19f445687b737679eec9cb2.jpg")
 
 class Post(models.Model):
     id= models.UUIDField(primary_key=True,default=uuid.uuid4)
