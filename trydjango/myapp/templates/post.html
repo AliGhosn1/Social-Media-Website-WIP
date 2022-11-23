@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<body>
+<form action="" method="POST" , enctype="multipart/form-data" >
+    {% csrf_token %}
+    <p class="my-3 leading-6"> Upload pics
+    </p>
+    <div>
+        <input type="file" name="image_upload">
+        <textarea class="button soft-warning small" name="caption" placeholder="caption..." ></textarea>
+        <br>
+        <button class="button bg-blue-700" type="submit" >Upload</button>
+    </div>
+</form>
+
+
+{% if posts %}
+  <h3>Succesfully uploaded: {{post.user}}</h3>
+<img src="{{ posts.image.url}}" alt="connect" style="max-height:300px">
+{% endif %}
+
+</body>
+</html>

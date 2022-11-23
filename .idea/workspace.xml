@@ -4,9 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2502dfde-cb46-4339-806f-bb3ef9aabb48" name="Changes" comment="">
+    <list default="true" id="2502dfde-cb46-4339-806f-bb3ef9aabb48" name="Changes" comment="Merge branch 'master' of https://github.com/waspflannel/trydjango&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;trydjango/db.sqlite3&#10;#&#9;trydjango/myapp/models.py&#10;#&#9;trydjango/myapp/urls.py&#10;#&#9;trydjango/myapp/views.py">
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trydjango/myapp/migrations/0003_post.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trydjango/myapp/migrations/0003_remove_siteusers_email_remove_siteusers_password.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trydjango/myapp/migrations/0004_image_remove_post_caption_remove_post_created_at_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trydjango/myapp/migrations/0004_siteusers_picture.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trydjango/myapp/migrations/0005_image_caption_image_user_alter_image_id_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trydjango/myapp/migrations/0006_alter_image_id.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trydjango/myapp/migrations/0007_alter_image_id.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trydjango/myapp/migrations/0008_alter_image_caption_alter_image_user.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trydjango/myapp/migrations/0009_alter_image_caption_alter_image_title_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trydjango/myapp/templates/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trydjango/myapp/templates/changePfp.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trydjango/myapp/templates/post.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trydjango/myapp/templates/post1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trydjango/myapp/templates/register1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trydjango/myapp/templates/register3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trydjango/myapp/templates/userPage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trydjango/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/trydjango/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trydjango/myapp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/trydjango/myapp/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trydjango/myapp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/trydjango/myapp/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trydjango/myapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/trydjango/myapp/models.py" afterDir="false" />
@@ -20,6 +37,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager" show_ignored="true" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
