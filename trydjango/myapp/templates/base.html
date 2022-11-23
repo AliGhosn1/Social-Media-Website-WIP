@@ -1,0 +1,49 @@
+<html>
+<head>
+        <title> MATTER </title>
+
+    <style>
+    body{
+        background-color: white;
+
+        font-family: Arial, Helvetica, sans-serif;
+        margin:auto;
+    }
+    div.wrapper{
+        margin-left: auto;
+        margin-right: auto;
+        width:1900px;
+    }
+    div.header {
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        border-bottom-color: gray;
+        display:flex;
+        justify-content: center;
+        background-color: rgb(25,97,121);
+        width:auto;
+        margin-left:auto;
+    }
+    h1 {
+
+        color: black;
+        margin: auto;
+        font-size: 55px;
+    }
+    {% block styles %}
+    {% endblock %}
+    </style>
+
+</head>
+<body>
+    <div class = "header">
+        <h1> MATTER<sup style="font-size: 10px; color: white;"> TM</sup> </h1>
+    </div>
+
+    <div id ="content", name="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+</body>
+</html>

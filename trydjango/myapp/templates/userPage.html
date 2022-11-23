@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block styles %}
+.pfp{
+    width: 200px;
+    height: 200px;
+    border-style: solid;
+    margin-top: 100px;
+    margin-left: 45%;
+}
+#n{
+    display:flex;
+    justify-content: center;
+}
+img{
+    width: 200px;
+    height: 200px;
+}
+{% endblock %}
+
+
+{% block content %}
+<div class = "wrapper">
+    <div class = "pfp">
+        <img src = {{PFP}}>
+    </div>
+    <h2 id="n"> {{NAME}} </h2>
+
+</div>
+{% endblock %}
+
+
