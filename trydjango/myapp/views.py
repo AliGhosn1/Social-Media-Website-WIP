@@ -91,3 +91,11 @@ def userSite(request):
             'PFP':SiteUsers.objects.get(name=request.user.username).picture
         }
         return render(request,'userPage.html', context)
+
+
+
+def changePfp(request):
+    if request.method == 'POST':
+        uploaded_file = request.FILES['Document']
+        print(uploaded_file.name)
+    return render(request, 'changePfp.html', {})
