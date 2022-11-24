@@ -12,7 +12,7 @@ urlpatterns =[
     #path('login/', views.login, name='login')
     path('', views.loginPage, name='login'),
     #path('upload/',views.image_upload_view,name='upload')
-    path('upload/', views.image_upload_view),
+    path('upload/', views.image_upload_view,name = 'upload'),
     path('userSite/', views.userSite, name='userSite'),
 ]
 if settings.DEBUG:

@@ -4,12 +4,10 @@
   <button type="submit">Upload</button>
 </form>
 
-{% if img_obj %}
+{% if posts%}
   <h3>Succesfully uploaded: {{img_obj.title}}</h3>
 <img src="{{ img_obj.image.url}}" alt="connect" style="max-height:300px">
-{% endif %}
+<h3>Succesfully uploaded by: {{user}}</h3>
 <h3>caption : {{img_obj.caption}}</h3>
-
-{% if posts %}
-  <h3>Succesfully uploaded by: {{posts.user}}</h3>
 {% endif %}
+

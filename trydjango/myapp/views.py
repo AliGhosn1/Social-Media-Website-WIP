@@ -3,7 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from PIL import Image
 from django.urls import reverse
 from django.template import loader
-from .models import jadenSite, SiteUsers, Post , Image
+from .models import jadenSite, SiteUsers , Image
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import UserCreationForm;
 from .forms import UserCreation , ImageForm
@@ -94,19 +94,19 @@ def register(request):
     print("dsadasdasd")
     return render(request, 'register3.html', context)  # render must take a dict so put form in dictionarysasa
 
-
+'''
 def upload(request):
     if request.method == 'POST':
         user= request.user.username
-        image=request.FILES.get("image_upload")
+        image = request.FILES.get("image")
         caption = request.POST['caption']
-        new_post = Image.objects.create(user=user,caption=caption,image=image)
+        new_post = Post.objects.create(user=user,image=image , caption=caption)
         new_post.save();
-        posts = Image.objects.all()
-        return render(request, 'post.html', {'posts': posts})
+        posts = Post.objects.all()
+        return render(request, 'post1.html', {'posts':posts,'user': user,'image':image , 'caption':caption})
     else:
-        form = ImageForm()
-        return render(request, 'post.html', {'form': form})
+        return render(request ,'post1.html',{'image':request.FILES.get("image")})
+'''
 
 
 def image_upload_view(request):
@@ -115,15 +115,11 @@ def image_upload_view(request):
         form = ImageForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            # Get the current instance object to display in the template
             user = request.user.username
-            image = request.FILES.get("image_upload")
-            caption = request.POST['caption']
-            #new_post = Image.objects.create(user=user, image=image, caption=caption)
-            #new_post.save();
             posts = Image.objects.all()
+            image = request.FILES.get("image")
             img_obj = form.instance
-            return render(request, 'post1.html', {'form': form, 'img_obj': img_obj , 'posts':posts})
+            return render(request, 'post1.html', {'form': form, 'img_obj': img_obj , 'posts':posts , 'user':user , 'image':image})
     else:
         form = ImageForm()
     return render(request, 'post1.html', {'form': form})
