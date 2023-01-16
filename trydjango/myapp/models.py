@@ -4,8 +4,9 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 # Create your models here.
 import uuid
+from django.contrib.auth import get_user_model
 from datetime import datetime
-
+User = get_user_model()
 class jadenSite(models.Model):
     name = models.CharField(max_length=255)
     title = models.CharField(max_length=255)
@@ -13,19 +14,30 @@ class jadenSite(models.Model):
 class SiteUsers(models.Model):
     name = models.CharField(max_length=255)
     picture = models.URLField(max_length=255, default="https://i.pinimg.com/736x/dd/f0/11/ddf0110aa19f445687b737679eec9cb2.jpg")
-'''
-class Post(models.Model):
-    id= models.UUIDField(primary_key=True,default=uuid.uuid4)
-    user= models.CharField(max_length=100)
-    image = models.ImageField(upload_to='static/images')
-    #image = models.ImageField(upload_to='default/', blank=True, null=True, default='default.jpg')
-    caption=models.TextField()
-    #created_at=models.DateTimeField(default=datetime.now)
-    #no_of_likes=models.IntegerField(default=0)
 
     def __str__(self):
-        return self.user
-'''
+        return self.name
+
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE)
+    userId = models.IntegerField()
+    userBio = models.TextField(blank=True)
+    userProfileImg = models.ImageField(default="/blankpfp.jpg", null=True, blank=True)
+
+    def __str__(self):
+        return self.user.username
+
+
+# class Post(models.Model):
+#     id= models.UUIDField(primary_key=True,default=uuid.uuid4)
+#     user= models.CharField(max_length=100)
+#     image = models.ImageField(upload_to='static/images')
+#     caption=models.TextField()
+#
+#     def __str__(self):
+#         return self.user
+
 class Image(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
     user = models.CharField(max_length=100)
@@ -34,4 +46,4 @@ class Image(models.Model):
     caption=models.TextField(blank=True)
 
     def __str__(self):
-        return self.title
+        return self.user

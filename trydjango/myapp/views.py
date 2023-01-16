@@ -3,9 +3,10 @@ from django.http import HttpResponse, HttpResponseRedirect
 from PIL import Image
 from django.urls import reverse
 from django.template import loader
-from .models import jadenSite, SiteUsers , Image
+from .models import jadenSite, SiteUsers , Image , Profile
 from django.contrib.auth import authenticate, login
-from django.contrib.auth.forms import UserCreationForm;
+from django.contrib.auth.models import User , auth
+from django.contrib.auth.forms import UserCreationForm
 from .forms import UserCreation , ImageForm
 from django.contrib.auth.hashers import check_password
 from django.contrib import messages
@@ -31,7 +32,7 @@ def authenticateUser(request):
 
 def jadenWebsite(request):
     men = jadenSite.objects.all().values()
-    Users = SiteUsers.objects.all().values()
+    Users = SiteUsers.objects.all().values().values()
 
     template = loader.get_template('index.html')
     thingsinDatabase = {
@@ -69,7 +70,7 @@ def loginPage(request):
         print(user)
         if user is not None:
             login(request, user)
-            return redirect('userSite/')
+            return redirect('upload/')
         else:
             messages.success(request, 'incorrect username or password')
     context = {}
@@ -85,44 +86,50 @@ def register(request):
         form = UserCreation(request.POST)
         if form.is_valid():
             form.save()
-            username = form.cleaned_data.get('username')
-            messages.success(request, 'account was succesfully made for ' + username)
-            newUser = SiteUsers.objects.create(name=username)
-            newUser.save()
+            user = request.POST['username']
+            email = request.POST['email']
+            password1 = request.POST['password1']
+            password2 = request.POST['password2']
+            # if User.objects.filter(email=email).exists():
+            #     print("zzzzzzzzz")
+            #     messages.info(request,'email already in use')
+            #     return redirect('register')
+            # elif User.objects.filter(user=user).exists():
+            #     print("bbbbbbbbb")
+            #     messages.info(request,'username already in use')
+            #     return redirect('register')
+            # else:
+            print("dsadasdasdasddsa")
+            user_model = User.objects.get(username=user)
+            new_profile = Profile.objects.create(user=user_model,userId =user_model.id)
+            new_profile.save()
+            #return redirect('login')
+            #messages.success(request, 'account was succesfully made for ' + user)
             return redirect('login')
     context = {'form': form}
-    print("dsadasdasd")
     return render(request, 'register3.html', context)  # render must take a dict so put form in dictionarysasa
 
-'''
-def upload(request):
-    if request.method == 'POST':
-        user= request.user.username
-        image = request.FILES.get("image")
-        caption = request.POST['caption']
-        new_post = Post.objects.create(user=user,image=image , caption=caption)
-        new_post.save();
-        posts = Post.objects.all()
-        return render(request, 'post1.html', {'posts':posts,'user': user,'image':image , 'caption':caption})
-    else:
-        return render(request ,'post1.html',{'image':request.FILES.get("image")})
-'''
 
 
 def image_upload_view(request):
-    """Process images uploaded by users"""
     if request.method == 'POST':
         form = ImageForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
             user = request.user.username
-            posts = Image.objects.all()
             image = request.FILES.get("image")
-            img_obj = form.instance
-            return render(request, 'post1.html', {'form': form, 'img_obj': img_obj , 'posts':posts , 'user':user , 'image':image})
+            title = request.POST.get('title')
+            new_post = Image.objects.create(user=user, image=image, title=title)
+            new_post.save()
+            posts = Image.objects.all()
+            pfp = Profile.objects.all().values()
+            print(pfp)
+            render(request, 'post1.html', {'form': form , 'posts':posts , 'user':user , 'image':image,'pfp':pfp})
+            return redirect('upload')
     else:
         form = ImageForm()
-    return render(request, 'post1.html', {'form': form})
+        posts = Image.objects.all()
+        return render(request, 'post1.html', {'form': form , 'posts':posts})
+
 
 def userSite(request):
     if request.user.username == "":

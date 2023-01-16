@@ -5,16 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2502dfde-cb46-4339-806f-bb3ef9aabb48" name="Changes" comment="Merge branch 'master' of https://github.com/waspflannel/trydjango&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;trydjango/db.sqlite3&#10;#&#9;trydjango/myapp/models.py&#10;#&#9;trydjango/myapp/urls.py&#10;#&#9;trydjango/myapp/views.py">
+      <change afterPath="$PROJECT_DIR$/trydjango/myapp/migrations/0011_alter_siteusers_picture.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trydjango/myapp/migrations/0012_post_caption.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trydjango/myapp/migrations/0013_alter_post_image.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trydjango/myapp/migrations/0014_alter_post_image.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trydjango/myapp/migrations/0015_alter_image_caption.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trydjango/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/trydjango/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trydjango/myapp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/trydjango/myapp/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trydjango/myapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/trydjango/myapp/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trydjango/myapp/templates/post.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trydjango/myapp/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/trydjango/myapp/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trydjango/myapp/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/trydjango/myapp/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trydjango/myapp/templates/post1.html" beforeDir="false" afterPath="$PROJECT_DIR$/trydjango/myapp/templates/post1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trydjango/myapp/templates/register3 (1).html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trydjango/myapp/templates/register3.html" beforeDir="false" afterPath="$PROJECT_DIR$/trydjango/myapp/templates/register3.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trydjango/myapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/trydjango/myapp/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trydjango/myapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/trydjango/myapp/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trydjango/trydjango/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/trydjango/trydjango/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trydjango/trydjango/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/trydjango/trydjango/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +53,11 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "last_opened_file_path": "C:/Users/Administrator/dev/trydjango/trydjango/media"
+  }
+}]]></component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
       <console-settings module-name="trydjango" is-module-sdk="true">
@@ -53,6 +65,18 @@
         <option name="myModuleName" value="trydjango" />
       </console-settings>
     </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\dev\trydjango\trydjango\media" />
+      <recent name="C:\Users\Administrator\dev\trydjango\trydjango\static\assets\images\post" />
+      <recent name="C:\Users\Administrator\dev\trydjango\trydjango\static\assets\images\avatars" />
+      <recent name="C:\Users\Administrator\dev\trydjango\trydjango\static" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\dev\trydjango\trydjango\static\assets\images\post" />
+      <recent name="C:\Users\Administrator\dev\trydjango\trydjango\static" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="project" type="PythonConfigurationType" factoryName="Python">
@@ -135,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669186341051</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Merge branch 'master' of https://github.com/waspflannel/trydjango&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;trydjango/db.sqlite3&#10;#&#9;trydjango/myapp/models.py&#10;#&#9;trydjango/myapp/urls.py&#10;#&#9;trydjango/myapp/views.py">
+      <created>1669269551190</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1669269551190</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
