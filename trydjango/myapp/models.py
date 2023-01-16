@@ -21,6 +21,7 @@ class SiteUsers(models.Model):
 
 class Profile(models.Model):
     user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE)
+    #user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="profile")
     userId = models.IntegerField()
     userBio = models.TextField(blank=True)
     userProfileImg = models.ImageField(default="/blankpfp.jpg", null=True, blank=True)
@@ -44,6 +45,7 @@ class Image(models.Model):
     title = models.CharField(max_length=200)
     image = models.ImageField(upload_to='images')
     caption=models.TextField(blank=True)
+    userWhoPosted = models.ForeignKey(User, on_delete=models.CASCADE, related_name="profile1",null=True)
 
     def __str__(self):
         return self.user

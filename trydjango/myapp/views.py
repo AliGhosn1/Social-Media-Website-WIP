@@ -118,7 +118,7 @@ def image_upload_view(request):
             user = request.user.username
             image = request.FILES.get("image")
             title = request.POST.get('title')
-            new_post = Image.objects.create(user=user, image=image, title=title)
+            new_post = Image.objects.create(user=user, image=image, title=title, userWhoPosted = User.objects.get(username = user))
             new_post.save()
             posts = Image.objects.all()
             pfp = Profile.objects.all().values()
