@@ -140,3 +140,15 @@ def userSite(request):
             'PFP':SiteUsers.objects.get(name=request.user.username).picture
         }
         return render(request,'userPage.html', context)
+
+def profile(request ,pk):
+    userReference = User.objects.get(username=pk)
+    userProfile = Profile.objects.get(user=userReference)
+    userPosts=Image.objects.filter(user=pk)
+    numberOfPosts=len(userPosts)
+    context ={
+        'userPosts':userPosts,
+        'numberOfPosts':numberOfPosts,
+        'userProfile':userProfile
+    }
+    return render(request, 'profile.html',context)

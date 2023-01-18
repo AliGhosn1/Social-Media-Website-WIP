@@ -12,6 +12,7 @@ urlpatterns =[
     path('', views.loginPage, name='login'),
     path('upload/', views.image_upload_view,name = 'upload'),
     path('userSite/', views.userSite, name='userSite'),
+    path('profile/<str:pk>/', views.profile, name='profile')
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,
