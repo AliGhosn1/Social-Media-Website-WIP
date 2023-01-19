@@ -7,7 +7,7 @@
       <excludeFolder url="file://$MODULE_DIR$/Lib/site-packages/Pillow-9.3.0.dist-info" />
       <excludeFolder url="file://$MODULE_DIR$/trydjango/media" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="Python 3.8 (Social-Media-Website-WIP)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="PyDocumentationSettings">
