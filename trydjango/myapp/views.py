@@ -149,6 +149,6 @@ def profile(request ,pk):
     context ={
         'userPosts':userPosts,
         'numberOfPosts':numberOfPosts,
-        'userProfile':userProfile
+        'userProfile':userProfile,
     }
     return render(request, 'profile.html',context)
